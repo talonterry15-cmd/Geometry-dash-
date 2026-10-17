@@ -6,12 +6,14 @@
 <meta name="theme-color" content="#080b20">
 <title>Geometry Dash Lite — Watch, Discover & Play</title>
 <style>
+#intro{position:fixed;inset:0;z-index:99;display:grid;place-items:center;text-align:center;background:radial-gradient(circle at center,#1b2861,#050711 70%);transition:opacity .65s ease,visibility .65s ease}#intro.done{opacity:0;visibility:hidden}#intro .cube{width:58px;height:58px;margin:0 auto 22px;background:linear-gradient(135deg,#65f7ff,#8c6bff);border:3px solid white;box-shadow:0 0 30px #65f7ff;animation:cubespin .85s linear infinite}#intro h1{font-size:clamp(1.8rem,7vw,3.4rem);margin:0;letter-spacing:.08em}#intro p{color:#b6c4e5;margin:8px 0 20px}.loadbar{width:min(280px,70vw);height:8px;background:#1b2547;border-radius:9px;margin:auto;overflow:hidden}.loadbar span{display:block;height:100%;width:0;background:linear-gradient(90deg,#65f7ff,#8c6bff);box-shadow:0 0 16px #65f7ff;animation:loading 2.2s ease forwards}@keyframes cubespin{to{transform:rotate(180deg)}}@keyframes loading{to{width:100%}}
 :root{color-scheme:dark;--bg:#080b20;--panel:#111b3b;--cyan:#65f7ff;--purple:#8c6bff;--text:#f6f8ff;--muted:#b6c4e5}
 *{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 50% 0%,#1b2861 0,var(--bg) 58%);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.55}
 main{width:min(100% - 28px,960px);margin:0 auto;padding:28px 0 48px}.brand{font-size:.78rem;letter-spacing:.2em;color:var(--cyan);font-weight:900;text-align:center}.hero{text-align:center;padding:24px 0 20px}.hero h1{font-size:clamp(2.1rem,8vw,5rem);line-height:.98;letter-spacing:-.06em;margin:12px 0}.hero h1 span{color:var(--cyan);text-shadow:0 0 28px #65f7ff55}.hero p{max-width:660px;margin:16px auto;color:var(--muted);font-size:clamp(1rem,2.6vw,1.2rem)}.panel{background:#101831dc;border:1px solid #344775;border-radius:20px;padding:clamp(16px,4vw,28px);margin:18px 0;box-shadow:0 18px 55px #0004}.panel h2{margin:0 0 12px;font-size:clamp(1.3rem,4vw,2rem)}.video{aspect-ratio:16/9;width:100%;overflow:hidden;border-radius:14px;background:#050814;border:1px solid #31466d}.video iframe{width:100%;height:100%;border:0;display:block}.features{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.feature{padding:15px;border-radius:13px;background:#0a1229;border:1px solid #26375e}.feature b{display:block;margin-bottom:5px}.feature p{margin:0;color:var(--muted);font-size:.94rem}.actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.btn{display:flex;align-items:center;justify-content:center;text-align:center;min-height:52px;padding:13px 16px;border-radius:12px;border:1px solid #6076a5;text-decoration:none;color:var(--text);font-weight:850;background:#172449;transition:transform .12s,filter .12s}.btn:hover{filter:brightness(1.18);transform:translateY(-1px)}.btn.primary{color:#061022;background:linear-gradient(110deg,var(--cyan),#9c88ff);border-color:var(--cyan)}.note{text-align:center;color:#95a8d0;font-size:.82rem;margin-top:24px}.note a{color:var(--cyan)}@media(max-width:620px){main{width:min(100% - 20px,960px);padding-top:18px}.features{grid-template-columns:1fr}.actions{grid-template-columns:1fr}.panel{border-radius:15px}.hero{padding-top:16px}}
 </style>
 </head>
 <body>
+<div id="intro" role="status" aria-label="Loading the neon game experience"><div><div class="cube" aria-hidden="true"></div><h1>NEON RUSH</h1><p>Loading the arcade experience…</p><div class="loadbar"><span></span></div></div></div>
 <main>
   <div class="brand">ARCADE MODE: ON</div>
   <header class="hero">
@@ -22,6 +24,7 @@ main{width:min(100% - 28px,960px);margin:0 auto;padding:28px 0 48px}.brand{font-
     <h2 id="trailer-title">🎬 Watch the trailer</h2>
     <div class="video"><iframe src="https://www.youtube-nocookie.com/embed/k90y6PIzIaE?rel=0" title="Geometry Dash trailer on YouTube" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
   </section>
+  <section class="panel" aria-labelledby="preview-title"><h2 id="preview-title">🕹️ See the neon game in action</h2><p style="color:var(--muted);margin-top:-4px">Try our original browser platformer, Neon Rush. Jump over hazards, time your moves, and see how far you can get.</p><div class="video"><iframe src="./game.html" title="Play the original Neon Rush browser game preview" loading="lazy" allow="fullscreen"></iframe></div><div class="actions" style="margin-top:12px"><a class="btn primary" href="./game.html">⚡ Launch Neon Rush</a><a class="btn" href="https://www.youtube.com/watch?v=k90y6PIzIaE" target="_blank" rel="noopener noreferrer">▶ Watch the Geometry Dash Lite video</a></div></section>
   <section class="panel" aria-labelledby="why-title">
     <h2 id="why-title">⚡ Why give it a try?</h2>
     <div class="features">
@@ -41,5 +44,6 @@ main{width:min(100% - 28px,960px);margin:0 auto;padding:28px 0 48px}.brand{font-
   </section>
   <footer class="note">Fan-made discovery page. Geometry Dash Lite and its official trailer belong to their respective rights holders. This page is not affiliated with or endorsed by RobTop Games. The browser game linked here is an original fan-made game.</footer>
 </main>
+<script>window.addEventListener("load",()=>{setTimeout(()=>document.getElementById("intro")?.classList.add("done"),2300)});</script>
 </body>
 </html>
