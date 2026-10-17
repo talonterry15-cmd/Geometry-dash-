@@ -44,6 +44,6 @@ main{width:min(100% - 28px,960px);margin:0 auto;padding:28px 0 48px}.brand{font-
   </section>
   <footer class="note">Fan-made discovery page. Geometry Dash Lite and its official trailer belong to their respective rights holders. This page is not affiliated with or endorsed by RobTop Games. The browser game linked here is an original fan-made game.</footer>
 </main>
-<script>window.addEventListener("load",()=>{setTimeout(()=>document.getElementById("intro")?.classList.add("done"),2300)});</script>
+<script>(()=>{const hide=()=>document.getElementById("intro")?.classList.add("done");setTimeout(hide,1800);if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",()=>setTimeout(hide,900),{once:true})}else{setTimeout(hide,900)}})();</script>
 </body>
 </html>
